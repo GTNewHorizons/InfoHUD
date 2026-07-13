@@ -26,6 +26,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import com.gtnewhorizons.infohud.compat.Mods;
 import com.gtnewhorizons.infohud.configs.HudConfig;
 import com.gtnewhorizons.infohud.hud.Hud;
 import com.gtnewhorizons.infohud.hud.core.BackhandHandler;
@@ -240,7 +241,7 @@ public class GuiIngameMixin extends GuiIngame {
 
         int x = hotbarX - 22;
 
-        if (BackhandHandler.isLoaded() && BackhandHandler.getBackHandItemStack(mc.thePlayer) != null) {
+        if (Mods.BACKHAND.isLoaded() && BackhandHandler.getBackHandItemStack(mc.thePlayer) != null) {
             x = hotbarX - 55;
         }
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.minecraftforge.common.MinecraftForge;
 
+import com.gtnewhorizons.infohud.compat.Mods;
 import com.gtnewhorizons.infohud.configs.HudConfig;
 import com.gtnewhorizons.infohud.hud.core.InfoLine;
 import com.gtnewhorizons.infohud.hud.core.infolines.InfoBiome;
@@ -30,7 +31,6 @@ import com.gtnewhorizons.infohud.hud.event.JoinWorldEvent;
 import com.gtnewhorizons.infohud.hud.event.TickListener;
 
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 
 public class Hud {
 
@@ -46,7 +46,7 @@ public class Hud {
             .bus()
             .register(joinWorldEvent);
 
-        if (Loader.isModLoaded(HudUtils.BLOOD_MAGIC_ID)) {
+        if (Mods.BLOOD_MAGIC.isLoaded()) {
             MinecraftForge.EVENT_BUS.register(new BloodMagicEvent());
         }
     }
@@ -71,23 +71,23 @@ public class Hud {
 
         lines.add(new InfoCountItem(0));
 
-        if (Loader.isModLoaded(HudUtils.BLOOD_MAGIC_ID)) {
+        if (Mods.BLOOD_MAGIC.isLoaded()) {
             lines.add(new InfoBloodMagic(HudConfig.hudOrder.LpOrder));
         }
 
-        if (Loader.isModLoaded(HudUtils.THAUMCRAFT_ID)) {
+        if (Mods.THAUMCRAFT.isLoaded()) {
             lines.add(new InfoThaumcraft(HudConfig.hudOrder.WarpOrder));
         }
 
-        if (Loader.isModLoaded(HudUtils.GREG_TECH_ID)) {
+        if (Mods.GREGTECH.isLoaded()) {
             lines.add(new InfoOreChunk(HudConfig.hudOrder.OreChunkOrder));
         }
 
-        if (Loader.isModLoaded(HudUtils.FORESTRY_ID)) {
+        if (Mods.FORESTRY.isLoaded()) {
             lines.add(new InfoForestry(HudConfig.hudOrder.ForestryOrder));
         }
 
-        if (Loader.isModLoaded(HudUtils.NUTRIENT_ID)) {
+        if (Mods.NUTRIENT.isLoaded()) {
             lines.add(new InfoNutrient(HudConfig.hudOrder.NutrientOrder));
         }
     }
