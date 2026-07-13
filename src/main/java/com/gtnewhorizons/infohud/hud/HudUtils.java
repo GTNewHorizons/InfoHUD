@@ -17,11 +17,6 @@ import thaumcraft.common.lib.events.EventHandlerRunic;
 public class HudUtils {
 
     private static final Random RANDOM = new Random();
-    public static final String BLOOD_MAGIC_ID = "AWWayofTime";
-    public static final String THAUMCRAFT_ID = "Thaumcraft";
-    public static final String GREG_TECH_ID = "gregtech";
-    public static final String FORESTRY_ID = "Forestry";
-    public static final String NUTRIENT_ID = "nutrition";
 
     private static NBTTagCompound getPersistentDataTag(EntityPlayer player) {
         NBTTagCompound forgeData = player.getEntityData()
